@@ -45,32 +45,25 @@ const instrutor = {
 console.log(lerObjeto(instrutor))
 
 // 2- a.Crie dois objetos diferentes com as seguintes propriedades: nome, idade e profissão. 
-const pessoa = {
+const pessoa1 = {
 	nome: "Bruno", 
     idade: 23, 
 	profissao: "Instrutor"
 }
-const novaPessoa = {
-    ...pessoa,
+const pessoa2 = {
     nome: "Breno",
     idade: 20,
     profissao: "estudante"
 }
-// b. Escreva uma função que receba esses objetos e retorne um array com as seguintes informações:
-const pessoa = {
-	nome: "Bruno", 
-    idade: 23, 
-	profissao: "Instrutor"
-}
-const novaPessoa = {
-    ...pessoa,
-    nome: "Breno",
-    idade: 20,
-    profissao: "estudante"
-}    
-minhaFuncao(pessoa, novaPessoa)
 
-return: [("bruno", 5, 23, "instrutor", 9), "Breno", 5, 20, "estudante", 9]
+
+
+// b. Escreva uma função que receba esses objetos e retorne um array com as seguintes informações:
+function getUserData(pessoa1, pessoa2){
+    return [pessoa1.nome, pessoa1.nome.length, pessoa1.idade, pessoa1.profissao, pessoa1.profissao.length, pessoa2.nome, pessoa2.nome.length, pessoa2.idade, pessoa2.profissao, pessoa2.profissao.length]
+}
+
+getUserData(pessoa1, pessoa2)
 
 
 
