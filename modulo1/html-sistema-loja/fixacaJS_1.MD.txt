@@ -1,0 +1,15 @@
+function calculaSalario(qtdeCarrosVendidos, valorTotalVendas) {
+  const valorPorCarroVendido = valorTotalVendas / qtdeCarrosVendidos;
+    const salarioBase = 2000;
+    
+    if(qtdeCarrosVendidos !== 0){
+      const bonusFixo = 100;
+      const bonusMaleavel = (valorPorCarroVendido * 0.05);
+  
+      const bonusPorCarro = (bonusFixo + bonusMaleavel) * qtdeCarrosVendidos;
+  
+      return salarioBase + bonusPorCarro;      
+    } else {
+      return salarioBase
+    }
+}
