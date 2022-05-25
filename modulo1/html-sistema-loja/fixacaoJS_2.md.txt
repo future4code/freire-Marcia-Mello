@@ -1,0 +1,11 @@
+```
+function calculaPrecoTotal(quantidade) {
+  let precoMaca = 1.3;
+  
+  if(quantidade>=12){
+    precoMaca = 1
+  }
+  
+  return precoMaca * quantidade
+}
+```
