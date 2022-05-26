@@ -34,7 +34,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    /* background: black; */
 }
 
 .botao-amarelo {
@@ -56,7 +56,8 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    width: 18px;
+    height: 18px;
 }
 
 
