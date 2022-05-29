@@ -1,0 +1,13 @@
+h1 {
+    color: green;
+}
+
+p {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(207, 187, 0);
+}
+
+body {
+    border: 1px dotted black;
+}
