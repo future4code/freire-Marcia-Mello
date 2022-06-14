@@ -2,8 +2,11 @@ import React from 'react'
 
 function Final() {
   return (
-    <div>final</div>
+    <>
+      <h1>O FORMULÁRIO ACABOU</h1>
+      <p>Muito obrigado por participar! Entraremos em contato!</p>
+    </>
   )
 }
 
-export default Final
+export default Final;

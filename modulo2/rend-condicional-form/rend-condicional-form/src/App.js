@@ -3,10 +3,21 @@ import Etapa1 from './components/etapa1'
 import Etapa2 from './components/etapa2'
 import Etapa3 from './components/etapa3'
 import Final from './components/final'
+import { EtapaContainer, MainContainer } from './global-style'
 
 class App extends Component {
   state = {
     etapa: 1
+  }
+
+  voltarEtapa = () => {
+    const { etapa } = this.state
+
+    if(etapa > 1 && etapa <= 4) {
+      this.setState({
+        etapa: etapa - 1
+      })
+    }
   }
 
   avancarEtapa = () => {
@@ -17,6 +28,12 @@ class App extends Component {
         etapa: etapa + 1
       })
     }
+  }
+
+  reiniciarFormulario = () => {
+    this.setState({
+      etapa: 1
+    })
   }
 
   render() {
@@ -35,10 +52,14 @@ class App extends Component {
     }
 
     return (
-      <div>
-        {renderizarPagina}
+      <MainContainer>
+        <EtapaContainer>
+          {renderizarPagina}
+        </EtapaContainer>
+        {etapa !== 1 && etapa !== 4 && <button onClick={this.voltarEtapa}>Voltar etapa</button>}
         {etapa !== 4 && <button onClick={this.avancarEtapa}>Próxima etapa</button>}
-      </div>
+        {etapa === 4 && <button onClick={this.reiniciarFormulario}>Reiniciar Formulário</button>}
+      </MainContainer>
     )
   }
 }
