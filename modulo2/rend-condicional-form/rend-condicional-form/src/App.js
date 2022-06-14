@@ -39,16 +39,27 @@ class App extends Component {
   render() {
     const { etapa } = this.state
 
-    let renderizarPagina = <Etapa1/>
+    let renderizarPagina;
 
-    if(etapa === 1) {
-      renderizarPagina = <Etapa1/>
-    } else if (etapa === 2){
-      renderizarPagina = <Etapa2/>
-    } else if (etapa === 3) {
-      renderizarPagina = <Etapa3/>
-    } else if (etapa === 4) {
-      renderizarPagina = <Final/>
+    switch(etapa){
+      case 1:
+        renderizarPagina = <Etapa1/>
+      break;
+
+      case 2:
+        renderizarPagina = <Etapa2/>
+      break;
+
+      case 3:
+        renderizarPagina = <Etapa3/>
+      break;
+
+      case 4: 
+        renderizarPagina = <Final/>
+      break;
+
+      default:
+        renderizarPagina = <Etapa1/>
     }
 
     return (
