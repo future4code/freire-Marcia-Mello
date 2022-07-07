@@ -33,6 +33,8 @@ function AstroCard() {
                 </section>
             </section>
             <button onClick={() => pegarPerfil()}>pegar perfil</button>
+            <button onClick={() => matches ()}>matches</button>
+            <button onClick={() => descarte()}>descarte</button>
         </AstroCardContainer>
     )
 }

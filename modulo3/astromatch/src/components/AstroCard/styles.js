@@ -13,18 +13,29 @@ export const AstroCardContainer = styled.div`
     }
 
     img {
-        width: 100%;
+        margin-top: 150px;
+        width: 600%;
         position: absolute;
+        height: auto;
         inset: 0;
-        box-shadow: brown; 
+        
     }
 
     h2 {
-        color:  whitesmoke;
+        text-align: left;
+        color:  brown;
     }
     
     p{
-        color: 
+        color: whitesmoke;
+        position: absolute;
+        top: 370px;
+        left: 14%;
+        word-wrap: break-word;
+        width: 300px;
+        text-align: left;
+    
+
     }
 `
 
