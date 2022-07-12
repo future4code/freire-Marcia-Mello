@@ -12,7 +12,7 @@ function ApplicationFormPage() {
   return (
     <div>
       <h3>ApplicationFormPage</h3>
-      <button onClick={() => goBack(navigate)}></button>
+      <button onClick={() => goBack(navigate)}>Voltar</button>
       <button onClick={() => handleEnviarInscricao()}>Inscrever-se</button>
     </div>
   )

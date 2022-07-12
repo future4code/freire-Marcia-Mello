@@ -9,7 +9,7 @@ function ListTripsPage() {
     <div>
       <h2>ListTripsPage</h2>
       <button onClick={() => goBack(navigate)}>Voltar</button>
-      <section onClick={() => goToApplicationPage(navigate) }>Viagem pra lua</section>
+      <button onClick={() => goToApplicationPage(navigate) }>Viagem pra lua</button>
     </div>
   )
 }
