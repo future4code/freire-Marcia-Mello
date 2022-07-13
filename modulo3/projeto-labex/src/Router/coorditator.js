@@ -1,3 +1,5 @@
+import {useEffect} from 'react';
+
 export const goToHomePage = (navigate) => {
     navigate("/")
 }
@@ -28,4 +30,16 @@ export const goToTripDetailsPage = (navigate, id) => {
 
 export const goBack = (navigate) => {
     navigate(-1)
+}
+
+export const useProtectedPage = (navigate) => {
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+
+        if (token === null) {
+            console.log('Não está logado!!!')
+            goToAdminPage(navigate)
+        }
+    }, [navigate])
 }

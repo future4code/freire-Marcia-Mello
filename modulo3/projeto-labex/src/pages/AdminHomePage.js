@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { goToTripDetailsPage, goBack, goToCreateTripPage } from '../Router/coorditator';
+import { goToTripDetailsPage, goBack, goToCreateTripPage, useProtectedPage } from '../Router/coorditator';
 
 function AdminHomePage() {
   const [ viagem ] = useState({
@@ -10,6 +10,8 @@ function AdminHomePage() {
 
   const navigate = useNavigate();
   
+  useProtectedPage(navigate);
+
   const handleVerDetalhes = (id) => {
     goToTripDetailsPage(navigate, id)
   }
