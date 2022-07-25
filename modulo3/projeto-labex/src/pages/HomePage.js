@@ -8,9 +8,11 @@ const HomePage = () => {
     return (
 
         <div>
-            <h3> HomePage </h3>
-            <button onClick={() => goToTripsList(navigate)}>Lista de Viagens</button>
-            <button onClick={() => goToAdminPage(navigate)}>Área Adm</button>
+            <h1> LabeX </h1>
+            <section className="buttons-container">
+                <button onClick={() => goToTripsList(navigate)}>Lista de Viagens</button>
+                <button onClick={() => goToAdminPage(navigate)}>Área Adm</button>
+            </section>
         </div>
     );
 };
