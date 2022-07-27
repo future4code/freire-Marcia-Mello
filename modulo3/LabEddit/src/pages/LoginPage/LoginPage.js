@@ -1,14 +1,33 @@
 import React from "react"
-import { Button } from '@mui/material'
+import {ScreenContainer, LogoImage, SignUpButtonContainer} from "./styled"
+import logo from "../../assets/logo.png"
+import Button from '@material-ui/core/Button'
+import LoginForm from "./LoginForm"
+import {useNavigate} from 'react-router-dom';
+import {goToSignUp} from "../../routes/coordinator"
 
 const LoginPage = () => {
+  const navigate = useNavigate()
+
     return (
-        <div>
-            <h1>LoginPage</h1>
-            <Button variant="contained" color="primary">
-                Continuar
-            </Button>
-        </div>
+        <ScreenContainer>
+            <LogoImage src={logo}/>
+            <LoginForm/>
+             <SignUpButtonContainer>
+                <Button
+                         onClick={() => goToSignUp(navigate)}
+                         type={"submit"}
+                         fullwidth
+                         variant={"text"}
+                         color={"primary"}
+                    >
+                        Não possui conta? Cadastre-se
+                        </Button>     
+
+             </SignUpButtonContainer>
+           
+        </ScreenContainer>
     )
 }
+
 export default LoginPage

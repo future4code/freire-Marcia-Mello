@@ -1,17 +1,20 @@
 import React from 'react'
-import {AppBar} from '@material-ui/core/AppBar'
-import {Toolbar} from '@material-ui/core/Toolbar'
-import { Button } from '@mui/material'
+import { Button, AppBar } from '@mui/material'
+import { goToSignUp, goToPost } from '../../routes/coordinator'
+import { useNavigate } from "react-router-dom"
+import { StyledToolbar } from './styled'
+
 
 
 const Header = () => {
+    const navigate = useNavigate()
+
     return (
         <AppBar position="static">
-            <Toolbar>
-                
-                <Button color="inherit">Login</Button>
-                <Button color="inherit">Apagar</Button>
-            </Toolbar>
+            <StyledToolbar>
+                <Button onClick={() => goToSignUp(navigate)} color="inherit">Entrar</Button>
+                <Button onClick={() => goToPost(navigate)} color="inherit">Logout</Button>
+            </StyledToolbar>
         </AppBar>
     )
 }
