@@ -1,9 +1,22 @@
-import React from "react"
-import Router from "./routes/Router"
+// Router
+import Router from './routes/Router';
 
+// constants
+import theme from './constants/theme';
 
-const App = () => {
-  return <Router/>
+// styles
+import { GlobalStyle } from './global/globalstyle';
+
+// material-ui
+import { ThemeProvider } from '@material-ui/core';
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Router />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

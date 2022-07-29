@@ -1,15 +1,30 @@
-export const goToLogin =(history) => {
-    history.push("/")
+import { useEffect } from "react"
+
+
+export const goToLogin = (navigate) => {
+    navigate("/")
 }
 
-export const goToSignUp = (history) => {
-    history.push("/cadastro")
+export const goToSignUp = (navigate) => {
+    navigate("/cadastro")
 }
 
-export const goToFeed = (history) => {
-    history.push("/feed")
+export const goToFeed = (navigate) => {
+    navigate("/feed")
 }
 
-export  const goToPost = (history) => {
-    history.push("/post")
+export const goToPost = (navigate, id) => {
+    navigate(`/post/${id}`)
+}
+
+export const useProtectedPage = (navigate) => {
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+
+        if (token === null) {
+            console.log('Não está logado!!!')
+            goToLogin(navigate)
+        }
+    }, [navigate])
 }
