@@ -7,7 +7,7 @@ export const ScreenContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 1rem;
 
     hr {
@@ -18,26 +18,26 @@ export const ScreenContainer = styled.div`
 
 export const StyledButton = styled(Button) `
     border-radius: 20px !important;
+    margin: 1rem 0 0;
 `
 
 export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 100%;
     max-width: 450px;
     align-items: center;
-    margin: 3rem 0 20px;
+    margin: 1rem 0 0;
 `
 
 export const FeedFormContainer = styled.form`
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 100%;
     max-width: 450px;
-    margin-bottom: 20px;
 `
 
 export const FeedButtonContainer = styled.div`
-    width: 80vw;
+    width: 100%;
     max-width: 450px;
 `

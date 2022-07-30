@@ -30,7 +30,7 @@ export const InputsContainer = styled.div`
 export const SignUpFormContainer = styled.form`
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 100%;
     max-width: 450px;
     margin-bottom: 20px;
 `

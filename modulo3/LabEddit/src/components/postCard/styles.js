@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const PostCardContainer = styled.div`
-    width: 364px;
+    width: 100%;
+    max-width: 450px;
     min-height: 167px;
     box-sizing: border-box;
     margin: 0 0 1rem;
-    background: #FBFBFB;
+    background-color: #FBFBFB;
     border: 1px solid #E0E0E0;
     border-radius: 12px;
     display: flex;
@@ -47,6 +48,14 @@ export const PostCardContainer = styled.div`
             border: 0.796748px solid #ECECEC;
             border-radius: 28px;
             margin: 0 20px 0 0;
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 9.56098px;
+            line-height: 12px;
+            text-align: center;
+            background-color: #FBFBFB;
+            color: #6F6F6F;
             
             img {
                 margin: 0 .5rem;

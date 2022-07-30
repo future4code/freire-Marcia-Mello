@@ -15,9 +15,18 @@ export const StyledToolbar = styled(Toolbar)`
         position: absolute;
         right: 30px;
     }
+
+
+    .close-icon {
+        position: absolute;
+        left: 30px;
+        height: 30%;
+        cursor: pointer;
+    }
+    
 `
 
-export const LogoImage = styled.img `
+export const LogoImage = styled.img`
     width: auto;
     height: 50%;
 `

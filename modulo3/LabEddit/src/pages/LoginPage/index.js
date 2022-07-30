@@ -9,19 +9,16 @@ import Brand from '../../assets/icons/brand.svg';
 
 // styles
 import { LogoImage, ScreenContainer, LoginButtonContainer, StyledButton } from './styled';
-
-// components
 import LoginForm from './form';
 
 const LoginPage = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const token = window.localStorage.getItem("token");
+    const token = window.localStorage.getItem('token');
 
-    if(token) goToFeed(navigate)
-
-  },[])
+    if(token) goToFeed(navigate);
+  })
 
   return (
     <ScreenContainer>
@@ -36,7 +33,7 @@ const LoginPage = () => {
           variant="contained"
           margin="normal"
         >
-          Cadastrar
+          Crie uma conta!
         </StyledButton>
       </LoginButtonContainer>
     </ScreenContainer>

@@ -21,10 +21,17 @@ export const useProtectedPage = (navigate) => {
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-
+        const post = localStorage.getItem("post");
+        const route = window.location.pathname;
+        
         if (token === null) {
             console.log('Não está logado!!!')
             goToLogin(navigate)
         }
+
+        if(route === "/post/:id" && !post){
+            goToFeed()
+        }
+        
     }, [navigate])
 }

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/urls"
 
-const token = window.localStorage.getItem("token");
+const token = window.localStorage.getItem('token');
 
 const headers = {
     headers: {
@@ -9,10 +9,10 @@ const headers = {
     }
 }
 
-export const getPosts = async () => {
+export const getPosts = async (size = 10) => {
 
     try {
-        const response = await axios.get(`${BASE_URL}/posts`, headers);
+        const response = await axios.get(`${BASE_URL}/posts?size=${size}`, headers);
         return response.data;
 
     } catch (error) {
@@ -20,7 +20,7 @@ export const getPosts = async () => {
     }
 }
 
-export const createPost = async (body, clear) => {
+export const createPost = async (body, clear, getPosts) => {
 
     try {
         await axios.post(`${BASE_URL}/posts`, body, headers);
@@ -33,34 +33,89 @@ export const createPost = async (body, clear) => {
     }
 }
 
-export const votePost = async (postId, direction, userVoteDirection) => {
-    if (userVoteDirection === direction) {
+export const getComments = async (postId) => {
+    try {
+        const response = await axios.get(`${BASE_URL}/posts/${postId}/comments`, headers);
+        return response.data;
 
-        const upVote = {
-            direction: 1
-        }
+    } catch (error) {
+        alert(`erro: ${error}`)
+    }
+}
 
-        try {
-            await axios.post(`${BASE_URL}/posts/${postId}/votes`, upVote, headers)
+export const createComment = async (body, clear, postId, getComments) => {
 
+    try {
+        await axios.post(`${BASE_URL}/posts/${postId}/comments`, body, headers);
+        clear()
+        getComments()
 
-        } catch (error) {
+        console.log("Comentario Criado")
+    } catch (error) {
+        alert(`erro: ${error}`)
+    }
+}
 
-            window.alert("Ocorreu um erro, tente novamente")
+export const votePost = async (getPosts, postId) => {
 
-        }
-    } else {
+    const body = {
+        direction: 1
+    }
 
-        const downVote = {
-            direction: -1
-        }
+    try {
+        await axios.post(`${BASE_URL}/posts/${postId}/votes`, body, headers);
+        getPosts()
 
-        try {
-            await axios.put(`${BASE_URL}/posts/${postId}/votes`, downVote, headers)
+        console.log("Voto Concluido")
+    } catch (error) {
+        alert(`erro: ${error}`)
+    }
+}
 
-        } catch (error) {
+export const unVotePost = async (getPosts, postId) => {
 
-            window.alert("Ocorreu um erro, tente novamente")
-        }
+    const body = {
+        direction: -1
+    }
+
+    try {
+        await axios.post(`${BASE_URL}/posts/${postId}/votes`, body, headers);
+        getPosts()
+
+        console.log("Voto Concluido")
+    } catch (error) {
+        alert(`erro: ${error}`)
+    }
+}
+
+export const voteComment = async (getComments, postId) => {
+
+    const body = {
+        direction: 1
+    }
+
+    try {
+        await axios.post(`${BASE_URL}/comments/${postId}/votes`, body, headers);
+        getComments()
+
+        console.log("Voto Concluido")
+    } catch (error) {
+        alert(`erro: ${error}`)
+    }
+}
+
+export const unVoteComment = async (getComments, postId) => {
+
+    const body = {
+        direction: -1
+    }
+
+    try {
+        await axios.post(`${BASE_URL}/comments/${postId}/votes`, body, headers);
+        getComments()
+
+        console.log("Voto Concluido")
+    } catch (error) {
+        alert(`erro: ${error}`)
     }
 }
