@@ -1,0 +1,51 @@
+POST http://localhost:3003/users
+Content-Type: application/json
+
+<
+    "name":"batatinha",
+    "email":"batatinha@gmail.com",
+    "password":"1111111111"
+>
+
+<
+    "name":"Donatelo",
+    "email":"donatelo@gmail.com",
+    "password":"2222222222"
+>
+
+<
+    "name:"Al",
+    "email":"al@gmail.com",
+    "password":"3333333333"
+>
+
+###
+
+GET http://localhost:3003/users
+
+###
+
+POST http://localhost:3003/products
+Content-Type:application/json
+
+<
+    "name":"laptop",
+    "price": 5000.00,
+    "image_url":"https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+>
+
+###
+
+get http://localhost:3003/products
+
+###
+
+POST http:/localhost:3003/purchases
+content-Type: application/json
+
+<
+    "userId":"001",
+    "productId":"232233543646",
+    "quantity":20
+
+>
