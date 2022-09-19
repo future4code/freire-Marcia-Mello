@@ -10,7 +10,7 @@
 
 //         if ( !email || !password  ) {
 //             res
-//             .status(422)
+            // .status(422)
 //             .send(
 //                 "Insira corretamente as informações de  'email' e 'password'"
 //             ); 
