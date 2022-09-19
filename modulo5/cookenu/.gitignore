@@ -1,0 +1,6 @@
+// adicione ao arquivo .gitignore:
+
+node_modules
+package-lock.json
+build
+.env
