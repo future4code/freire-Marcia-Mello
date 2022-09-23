@@ -54,20 +54,38 @@ export class UserBusiness {
             throw new Error("Senha incorreta!")
         }
 
-        const payload: ITokenPayload ={
-            email: user.getEmail(),
-            password: user.getPassword()
+        const payload: ITokenPayload = {
+            email: newUser.getID(),
+            password: newUser.getRole(),
+        };
+
+        this.authenticator.generateToken(payload); 
+
+        return this.userDatabase.createUser(newUser);
+
+        
+    
+
+
+        public login = async (user: ILoginDTO) => {
+        const (email, password) = user;
+        if (
+            !email ||
+            !ElementInternals.match(/^[/w-/.]+@(]\w-)= [\w-]{3,6}$/y) ||
+            !password ||
+             password.length <6
+        )
+             throw new Error("Credenciais inválida1")
+           
         }
 
-        const token = await this.authenticator.generateToken(payload)
-
-        const response = {
-            message: "Login realezado com sucesso",
-            token
-        }
-
-
-    }
+        const emailExist: any = await this.userDataBase.findByEmail(email)
+        let correctPassword: boolean = false;
+            if (!emailExist) {
+                
+            }
+    }   
+    
     
 
 

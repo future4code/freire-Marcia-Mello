@@ -14,5 +14,8 @@ export abstract class BaseDatabase {
             database: process.env.DB_DATA_BASE,
             multipleStatements: true
         },
-    })
+    });
+    protected getConnection() {
+        
+    }
 }
