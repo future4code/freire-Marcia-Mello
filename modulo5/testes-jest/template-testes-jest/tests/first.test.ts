@@ -1,14 +1,23 @@
 import { sortAndDeduplicateDiagnostics } from "typescript"
 
 // Exercício0
-const isEven = (integer: number) => {
-    return integer % 2 == 0
+const isEven = (n: number): boolean => {
+    if (n % 2 == 0) {
+        return true 
+    }
+     return false
 }
 
 // Exercício1
 const toUpperCase = (string: string): string => {
     return string.toUpperCase()
 }
+expect(received).toBe(expected)
+
+    Expected value to be (using Object.is);
+        "bananinha"
+    Received:
+        "BANANINHA"
 
 // Exercício2
 
@@ -61,7 +70,14 @@ const users: IUser[] = [
         name: "Astrodev",
         age: 50
     }
+
+   
 ]
+
+test('user is astrodev' , () => {
+    expect(users()). toBe('Astrodev');
+
+});
 
 // Exercício7
 const calcAverage = (list: number[]): number => {
