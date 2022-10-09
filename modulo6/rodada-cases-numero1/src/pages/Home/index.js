@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useGameContext } from '../../context';
 import TarotCard from '../../components/TarotCard';
 import { Button, HomeContainer, CardsWrapper } from './styles.js';
 import { shuffle } from '../../services/shuffle';
+import Cards from '../../services/api.json';
 
 const Home = () => {
 	const {
@@ -12,10 +12,9 @@ const Home = () => {
 	} = useGameContext();
 	const [shuffledCards, setShuffledCards] = useState([]);
 
-	const handleGetCards = async () => {
-		const result = await axios.get('http://127.0.0.1:5500/src/services/api.json');
-
-		handleSaveCards(result.data)
+	const handleGetCards = () => {
+		const result = Cards;
+		handleSaveCards(result)
 	}
 
 	useEffect(() => {
