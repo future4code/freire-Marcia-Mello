@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './App/App';
 import { GlobalStyle } from './Global.styled';
 import CssBaseline from '@mui/material/CssBaseline';
 

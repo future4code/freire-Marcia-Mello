@@ -1,14 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import styled from "styled-components"
-import OrderSuccessPopup from "./components/OrderSuccessPopup";
-import { BASE_URL } from "./constants";
-import OrderSummary from "./screens/OrderSummary";
-import PizzasMenu from "./screens/PizzasMenu";
-
-export const ContainerMain = styled.main`
-    display: flex;
-`
+import OrderSuccessPopup from "../components/OrderSuccessPopup/OrderSuccessPopup";
+import { BASE_URL } from "../constants";
+import OrderSummary from "../screens/OrderSummary";
+import { ContainerMain } from "./styles";
+import PizzasMenu from "../screens/PizzaMenu"
 
 function App() {
     const [ cart, setCart ] = useState([])

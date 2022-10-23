@@ -11,6 +11,10 @@ body,
     width: 100%;
 }
 
+html, body, #root {
+    min-height: 100vh;
+}
+
 ul, li {
     list-style-type: none;
 }
