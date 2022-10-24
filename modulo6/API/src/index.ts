@@ -63,7 +63,7 @@ app.get(`/products`, (req: Request, rest: Response) => {
     }
 })
 
-app.get(`/products: id`, (req: Request, res: Response) => {
+app.get(`/products/:id`, (req: Request, res: Response) => {
    let errorCode = 400
     try{
         const id: number = Number(req.params.id)
@@ -84,7 +84,32 @@ app.get(`/products: id`, (req: Request, res: Response) => {
 
         res.status(200).send(product)
 
-        ]
+        
+    }catch(error:any) {
+        res.status(errorCode).send({message: error.message})
+    }
+})
+
+app.post('/products', (req: Request, res: Response) => {
+    let errorCode: number = 400
+    try {
+
+        const {id, name} = req.body
+        
+        if(!id || !name) {
+            errorCode = 422
+            throw new Error('Please check the fields')
+        }
+
+         const newProduct: product = {
+            id,
+            name
+        }
+
+        products.push(newProduct)
+
+        res.status(201).send({message: 'Product created successefully'}) 
+
     }catch(error:any) {
         res.status(errorCode).send({message: error.message})
     }
