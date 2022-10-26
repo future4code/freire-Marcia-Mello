@@ -1,0 +1,27 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### 1) Endpoint  de Products
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "prancha"
+    
+}
+
+
+### 2) Get products by id
+GET  http://localhost:3003/products/id
+Content-Type: application/json
+
+
+
+### 3) Get products by name
+GET http://localhost:3003/products?name
+Content-Type: application/json
+
+
+
